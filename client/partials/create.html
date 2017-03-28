@@ -1,0 +1,16 @@
+<div ng-controller="createController">
+  <a href="#!/dash">Cancel</a>
+  <form ng-submit="createPoll(newPoll)">
+    <label>Question</label>
+    <input type="text" ng-model="newPoll.question">
+    <label>option 1</label>
+    <input type="text" ng-model="newPoll.option1">
+    <label>option 2</label>
+    <input type="text" ng-model="newPoll.option2">
+    <label>option 3</label>
+    <input type="text" ng-model="newPoll.option3">
+    <label>option 4</label>
+    <input type="text" ng-model="newPoll.option4">
+    <input type="submit" value="Create Poll">
+  </form>
+</div>

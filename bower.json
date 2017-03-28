@@ -1,0 +1,22 @@
+{
+  "name": "MeanWallDeploy",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "kss11b <kss11b@acu.edu>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kss11b/MeanFirstDeployment",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.3",
+    "angular": "^1.6.3",
+    "angular-cookies": "^1.6.3"
+  }
+}

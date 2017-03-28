@@ -1,0 +1,21 @@
+<div ng-controller="highController" ng-init="">
+  <button ng-click="logout()">Logout</button>
+  <h3>{{current_user.fname}} ended the Bid</h3>
+  <h4>Highest Bidder per Product</h4>
+  <p>***************************************************</p>
+  <h3>Product 1</h3>
+  <p ng-repeat= 'user in users' ng-show="topBidder1 == user._id">{{user.fname}}</p>
+  <p>${{topBid1}}</p>
+  <p>***************************************************</p>
+  <p>***************************************************</p>
+  <h3>Product 2</h3>
+  <p ng-repeat= 'user in users' ng-show="topBidder2 == user._id">{{user.fname}}</p>
+  <p>${{topBid2}}</p>
+  <p>***************************************************</p>
+  <p>***************************************************</p>
+  <h3>Product 3</h3>
+  <p ng-repeat= 'user in users' ng-show="topBidder3 == user._id">{{user.fname}}</p>
+  <p>${{topBid3}}</p>
+  <p>***************************************************</p>
+  <button type="button" ng-click="start()">Start New Bid</button>
+</div>
