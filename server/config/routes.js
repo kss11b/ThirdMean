@@ -24,8 +24,8 @@ module.exports = function(app) {
   app.post('/end', function(req, res){
     bid.end(req, res)
   })
-  app.post('/max', function(req, res){
-    poll.max(req, res)
+  app.get('/getMax', function(req, res){
+    bid.getMax(req, res)
   })
   app.put('/vote/:id', function(req, res){
     poll.vote(req, res)

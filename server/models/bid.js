@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var BidSchema = new mongoose.Schema({
  item:{type: Number, required: true},
  bidder: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
- amount: {type: Number, min: 1, required:true}
+ amount: {type: Number, min: 1, required:true},
+ max: {type: Boolean, default:false}
 
 
 

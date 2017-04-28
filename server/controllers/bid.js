@@ -4,54 +4,34 @@ var User = mongoose.model('User')
 module.exports = {
 
   bid: function(req, res){
+    Bid.update({item: req.body.item, max:true}, {max:false}, function(err, doc){
+      if(err){
+        res.json(err)
+      }
+      else{
+
+
+
     var newBid = new Bid({
       item: req.body.item,
       bidder: req.body.bidder,
-      amount: req.body.amount
+      amount: req.body.amount,
+      max: true
     })
-    newBid.save(function(err, doc){
+    newBid.save(function(err, doc1){
       if(err){
         console.log('could not save original')
         return res.json(err);
       }
       else{
         console.log('Create Post Successs')
-        res.json(doc);
+        res.json(doc1);
       };
     })
-  },
-  option: function(req,res){
-    var option = new Option({
-      _question : req.body.author,
-      text : req.body.text
-    })
-    option.save(function(err, doc){
-      if(err){
-        return res.json(err)
-      }
-      else{
-        Question.findById(req.body.author).exec(function(err, question){
-          if(err){
-            res.json(err)
-          }
-          else{
-            question.options.push(option);
-          }
-
-          question.save(function(err, doc){
-            if(err){
-              console.log('could not save')
-              return res.json(err);
-            }
-            else{
-              console.log('Create Post Successs')
-              res.json(doc);
-            };
-          })
-      })
     }
   })
-},
+  },
+
 
 
   pull: function(req,res){
@@ -95,6 +75,16 @@ show: function(req, res){
   }).populate('options')
 },
 
+getMax: function(req, res) {
+  Bid.find({max: true}, function(err, doc){
+    if(err){
+      res.json(err)
+    }
+    else{
+      res.json(doc)
+    }
+  }).sort('item')
+}
 
 
 

@@ -1,54 +1,53 @@
 <div ng-controller="dashController">
-  <h1>Bid Now</h1>
-<button ng-click="logout()">Logout</button>
-<p>Hello, {{current_user.fname}}!</p>
-<p>***************************************************</p>
-<h2>Product 1</h2>
-<p>***************************************************</p>
+  <div class="z-depth-4">
+  <div class="red lighten-1">
+    <h1 class="white-text ">Bid Now</h1>
+  </div>
+
+<button ng-click="logout()" class="waves-effect waves-light btn">Logout</button>
+<h3>Hello, {{current_user.fname}}!</h3>
+</div >
+<h2>iPhone</h2>
+<img src="http://www.setup2repair.co.uk/resources/images/devices/iPhone-6S-Silver.png" alt="Could Not load image" height="250" width="250">
 <p>{{error_max1}}</p>
 <form ng-submit="bid(newBid, 1)">
-  <input type="text" ng-model="newBid.amount">
-  <input type="hidden" value="1" ng-model="newBid.item">
-  <input type="submit" value="Bid">
+  <input type="text" ng-model="newBid.amount" >
+  <input type="submit" value="Bid" class="waves-effect waves-light btn">
 </form>
 <h4>Current Bids</h4>
-<div>
+<div class="z-depth-4">
   <p ng-repeat="bid in bids | filter: search_box1" ng-show="bid.item == 1">{{bid.bidder.fname}}: ${{bid.amount}}</p>
 
   <input type="text" ng-model="search_box1" placeholder="Search">
 
 </div>
-
-<p>***************************************************</p>
-<h2>Product 2</h2>
-<p>***************************************************</p>
+<h2>Playstation 4</h2>
+<img src="https://psmedia.playstation.com/is/image/psmedia/generic-ps4-two-column-01-ps4-eu-17sept14?$2ColExpand_Image$" alt="Could Not Load Image" height="250" width="350">
 <p>{{error_max2}}</p>
 <form ng-submit="bid(newBid, 2)">
   <input type="text" ng-model="newBid.amount">
-  <input type="submit" value="Bid">
+  <input type="submit" value="Bid" class="waves-effect waves-light btn">
 </form>
 <h4>Current Bids</h4>
-<div>
+<div class="z-depth-4">
 <p ng-repeat="bid in bids | filter: search_box2" ng-show="bid.item == 2">{{bid.bidder.fname}}: ${{bid.amount}}</p>
   <input type="text" ng-model="search_box2" placeholder="Search">
-  <p>************************************************</p>
+
 </div>
-
-
-<h2>Product 3</h2>
-<p>***************************************************</p>
+<h2>Fast Car</h2>
+<img src="https://exoticcars.enterprise.com/etc/designs/exotics/clientlibs/dist/img/homepage/Homepage-Hero-Car.png" alt="Could Not Load Image" height="200" width="550">
 <p>{{error_max3}}</p>
 <form ng-submit="bid(newBid, 3)">
   <input type="text" ng-model="newBid.amount">
   <input type="hidden" ng-value="3" ng-model="newBid.item">
-  <input type="submit" value="Bid">
+  <input type="submit" value="Bid" class="waves-effect waves-light btn">
 </form>
 <h4>Current Bids</h4>
 <div>
 <p ng-repeat="bid in bids | filter: search_box3" ng-show="bid.item == 3">{{bid.bidder.fname}}: ${{bid.amount}}</p>
   <input type="text" ng-model="search_box3" placeholder="Search">
-  <p>************************************************</p>
+
 </div>
 <p>{{end_error}}</p>
-<button type="button" ng-click="end()">End Bid</button>
+<button type="button" ng-click="end()" class="waves-effect waves-light red btn">End Bid</button>
 </div>
